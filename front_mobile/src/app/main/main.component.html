@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title>七里家园</title>
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="left-menu" [ngClass]="{'left-menu-active':menuClick}" >
+      <ul class="nav nav-pills nav-stacked">
+        <li role="presentation" class="left-menu-li"><a href="#">个人中心</a></li>
+        <li role="presentation" class="left-menu-li"><a href="#">热点</a></li>
+        <li role="presentation" class="left-menu-li"><a href="#">板块</a></li>
+      </ul>
+    </div>
+    <div class="page-header">
+      <div class="header-menu">
+        <a (click)="clickMenu()">
+          <i class="fa fa-reorder header-menu-img" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="header-title"><p>热点</p></div>
+    </div>
+    <!-- Make sure all your bars are the first things in your <body> -->
+    <router-outlet ></router-outlet>
+   <!--  <nav class="bar bar-tab">
+      <a class="tab-item" [ngClass]="{'active':homeSelect}" (click)="changePath('home')">
+        <span class="icon icon-home"></span>
+        <span class="tab-label">社区</span>
+      </a>
+      <a class="tab-item" [ngClass]="{'active':mySelect}" (click)="changePath('my')">
+        <span class="icon icon-person"></span>
+        <span class="tab-label">个人</span>
+      </a>
+    </nav> -->
+  </body>
+</html>

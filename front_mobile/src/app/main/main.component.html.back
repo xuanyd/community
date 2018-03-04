@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Hello, world!</title>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm title">
+          热门
+        </div>
+        <div class="col-sm title">
+          热门01
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm sub-title">
+          热门0001
+        </div>
+      </div>
+    </div>
+    <div class="container main">
+      <div class="row new-item">
+        <div class="col-sm">
+          <div>Xuanyd</div><div style="float: right;">活动</div>
+          <div>XXXX，XXXXX，XXXXXXXXXX</div>
+        </div>
+      </div>
+      <div class="row new-item">
+        <div class="col-sm">
+          <div>Xuanyd</div><div style="float: right;">活动</div>
+          <div>XXXX，XXXXX，XXXXXXXXXX</div>
+        </div>
+      </div>
+      <div class="row new-item">
+        <div class="col-sm">
+          <div>Xuanyd</div><div style="float: right;">活动</div>
+          <div>XXXX，XXXXX，XXXXXXXXXX</div>
+        </div>
+      </div>
+      <div class="row new-item">
+        <div class="col-sm">
+          <div>Xuanyd</div><div style="float: right;">活动</div>
+          <div>XXXX，XXXXX，XXXXXXXXXX</div>
+        </div>
+      </div>
+      <div class="row new-item">
+        <div class="col-sm">
+          <div>Xuanyd</div><div style="float: right;">活动</div>
+          <div>XXXX，XXXXX，XXXXXXXXXX</div>
+        </div>
+      </div>
+      <div class="row new-item">
+        <div class="col-sm">
+          <div>Xuanyd</div><div style="float: right;">活动</div>
+          <div>XXXX，XXXXX，XXXXXXXXXX</div>
+        </div>
+      </div>
+      <div class="row new-item">
+        <div class="col-sm">
+          <div>Xuanyd</div><div style="float: right;">活动</div>
+          <div>XXXX，XXXXX，XXXXXXXXXX</div>
+        </div>
+      </div>
+      <div class="row new-item">
+        <div class="col-sm">
+          <div>Xuanyd</div><div style="float: right;">活动</div>
+          <div>XXXX，XXXXX，XXXXXXXXXX</div>
+        </div>
+      </div>
+    </div>
+    <div class="container bottom">
+      <div class="row">
+        <div class="col-sm title">
+          热门
+        </div>
+        <div class="col-sm title">
+          热门01
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

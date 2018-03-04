@@ -1,0 +1,53 @@
+<div class="header">              
+  <h3>基础表格</h3>
+</div>
+<div class="content">
+  <div class="table-responsive">
+    <div id="datatable_wrapper" class="dataTables_wrapper form-inline" role="grid">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="pull-left">
+            <div class="dataTables_filter" >
+              <label>
+                <input aria-controls="datatable" class="form-control" placeholder="Search" type="text">
+                <button class="btn btn-primary" style="margin-top: 5px;" data-dismiss="modal">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                  查询
+                </button>
+                <button class="btn btn-info search-btn" style="margin-top: 5px;" (click)="toAdd()">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  添加
+                </button>
+              </label>
+            </div>
+          </div>
+          <div class="clearfix">
+          </div>
+        </div>
+      </div>
+      <table class="table table-bordered table-hover table-bordered" >
+        <thead>
+          <tr role="row">
+            <th tabindex="0" style="width: 60px;" >编号</th>
+            <th tabindex="0" style="width: 390px;" >名称</th>
+            <th tabindex="0" style="width: 358px;" >地址</th>
+            <th tabindex="0" style="width: 235px;" >操作</th>
+          </tr>
+        </thead>
+        <tbody role="alert" aria-live="polite" aria-relevant="all">
+          <tr *ngFor="let item of linkList" role="row" class="odd">
+            <td align="center">{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.url}}</td>
+            <td>
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-info">修改</button>
+                <button type="button" class="btn btn-sm btn-warning">删除</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>             
+  </div>
+</div>

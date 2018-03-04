@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+    <!-- 启动对@Aspectj的支持 -->
+    <aop:aspectj-autoproxy proxy-target-class="true" />
+    <context:component-scan base-package="com"/>
+    <!--**********************************************************************************-->
+
+    <!-- Enables the Spring MVC @Controller programming model -->
+    <mvc:annotation-driven/>
+    <!--**********************************************************************************-->
+    <!-- view -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/clk/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+    <!--**********************************************************************************-->
+
+    <!-- Mysql数据源 -->
+    <bean id="dbcpDataSource" class="org.apache.commons.dbcp.BasicDataSource"
+        destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+<<<<<<< HEAD
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/baseDB?generateSimpleParameterMetadata=true&amp;useUnicode=true&amp;characterEncoding=UTF-8" />
+=======
+        <property name="url" value="jdbc:mysql://47.94.81.15:3306/test?generateSimpleParameterMetadata=true&amp;useUnicode=true&amp;characterEncoding=UTF-8" />
+>>>>>>> 3884f4d3495bd8ce58b3271105f7710ea22d082c
+        <property name="username" value="cat" />
+        <property name="password" value="cat123" />
+        <property name="initialSize" value="5"></property>
+        <property name="maxActive" value="20"></property>
+        <property name="minIdle" value="5"></property>
+        <property name="maxIdle" value="10"></property>
+        <property name="maxWait" value="300"></property>
+        <property name="removeAbandoned" value="true"></property>
+        <property name="removeAbandonedTimeout" value="10"></property>
+        <property name="testWhileIdle" value="true"></property>
+        <property name="validationQuery" value="select 1"></property>
+    </bean>
+    <!--**********************************************************************************-->
+    <!-- SqlServer数据源
+    <bean id="dbcpDataSource" class="org.apache.commons.dbcp.BasicDataSource"
+          destroy-method="close">
+        <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+        <property name="url" value="jdbc:sqlserver://192.168.160.89:1433;Database=EDSChinaDB" />
+        <property name="username" value="web" />
+        <property name="password" value="web" />
+        <property name="initialSize" value="5" />
+        <property name="maxActive" value="20" />
+        <property name="minIdle" value="5" />
+        <property name="maxIdle" value="10" />
+        <property name="maxWait" value="300" />
+        <property name="removeAbandoned" value="true" />
+        <property name="removeAbandonedTimeout" value="10" />
+        <property name="testWhileIdle" value="true" />
+        <property name="validationQuery" value="select 1" />
+    </bean> -->
+    <!--**********************************************************************************-->
+    <!-- simpleJdbcTemplate -->
+    <bean id="simpleJdbcTemplate" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate">
+        <constructor-arg name="dataSource" ref="dbcpDataSource">
+        </constructor-arg>
+    </bean>
+    <!--**********************************************************************************-->
+    <!-- simpleJdbcTemplate -->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <constructor-arg name="dataSource" ref="dbcpDataSource">
+        </constructor-arg>
+    </bean>
+    <!--**********************************************************************************-->
+
+    <!-- baseDao -->
+    <bean id="baseDao" class="com.core.dao.BaseDao">
+        <constructor-arg name="jdbcTemplate" ref="simpleJdbcTemplate" />
+    </bean>
+    <!--**********************************************************************************-->
+    <!-- 上传文件bean -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    </bean>
+    <!--**********************************************************************************-->
+    <!-- 拦截器配置 -->
+    <mvc:interceptors>
+
+        <!-- 多个拦截器,顺序执行 -->
+        <mvc:interceptor>
+            <!-- 如果不配置或/*,将拦截所有的Controller -->
+            <mvc:mapping path="/*"/>
+            <bean id="commonInter" class="com.core.interceptor.CommonInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/*"/>
+            <mvc:mapping path="/admin/*"/>
+            <bean id="loginInter" class="com.core.interceptor.LoginInterceptor">
+            </bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    <!--**********************************************************************************-->
+
+
+
+    <!-- Exception异常处理 -->
+    <bean id="exceptionResolver" class="com.core.exception.AppExceptionHandler">
+    </bean>
+    <!--**********************************************************************************-->
+    <!-- 事务配置 -->
+    <bean id="txManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dbcpDataSource"></property>
+        <!--事务超时时间  设置为（60*1=60） 1分钟  -->
+        <property name="defaultTimeout" value="300"></property>
+    </bean>
+    <!--**********************************************************************************-->
+
+    <!-- 事务通知-->
+    <tx:advice id="txAdvice" transaction-manager="txManager">
+        <tx:attributes>
+            <tx:method name="qry*" read-only="true" />
+            <tx:method name="modify*" propagation="REQUIRED"
+                       rollback-for="CommonRollbackException" isolation="DEFAULT" />
+            <tx:method name="add*" propagation="REQUIRED"
+                       rollback-for="CommonRollbackException" isolation="DEFAULT" />
+            <tx:method name="del*" propagation="REQUIRED"
+                       rollback-for="CommonRollbackException" isolation="DEFAULT" />
+            <tx:method name="*" propagation="REQUIRED" rollback-for="CommonRollbackException"
+                       isolation="DEFAULT" />
+        </tx:attributes>
+    </tx:advice>
+    <!--**********************************************************************************-->
+
+    <!-- 事务切面规则 -->
+    <aop:config>
+        <!--定义切面  拦截com.xyd.app.service包及其子包下面的所有以Impl结尾的类中的任意方法-->
+        <!--
+            3.解释一下(* com.evan.crm.service.*.*(..))中几个通配符的含义：
+            第一个 * —— 通配 任意返回值类型
+            第二个 * —— 通配 包com.evan.crm.service下的任意class
+            第三个 * —— 通配 包com.evan.crm.service下的任意class的任意方法
+            第四个 .. —— 通配 方法可以有0个或多个参数
+        -->
+        <aop:pointcut expression="execution(* com.*.service..*Service.*(..))"
+                      id="transactionServicePointCut" />
+        <!--给切面绑定拦截规则-->
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="transactionServicePointCut" />
+    </aop:config>
+    <!--**********************************************************************************-->
+
+</beans>

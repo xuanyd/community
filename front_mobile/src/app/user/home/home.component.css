@@ -1,0 +1,21 @@
+.header-msg-left {
+	margin-top: 14px;
+	margin-left: 9px;
+}
+
+.header-msg-right {
+	margin-top: 14px;
+	margin-right: 9px;
+}
+
+.my-title-p {
+	margin-top: 3px;
+}
+
+.main-content {
+	margin-top: 46px;
+}
+
+.none-border-top {
+	border-top: none;
+}

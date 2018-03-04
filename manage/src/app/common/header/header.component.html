@@ -1,0 +1,48 @@
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" 
+        data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="fa fa-gear"></span>
+      </button>
+      <a class="navbar-brand" href="/html/index.html#">
+        <span>心电学诊疗中心</span>
+      </a>
+    </div>
+    <div class="navbar-collapse collapse" style="height: 1px;">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a>主页</a>
+        </li>
+        <li><a>关于</a></li>
+        <li class="dropdown" [ngClass]="{'open':headerMenus[1]}">
+          <a (click)="openHeader(1)" class="dropdown-toggle" data-toggle="dropdown">
+            联系 <b class="caret"></b>
+          </a>
+          <!-- <ul class="dropdown-menu">
+            <li><a href="/html/index.html#">联系我们</a></li>
+            <li class="dropdown-submenu"><a href="/html/index.html#">练习</a>
+              <ul class="dropdown-menu ">
+                <li><a>Action</a></li>
+                </ul>
+            </li>              
+          </ul> -->
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right user-nav">
+       <li class="dropdown profile_menu" [ngClass]="{'open':headerMenus[2]}"> 
+          <a (click)="openHeader(2)" class="dropdown-toggle" data-toggle="dropdown">
+            <img alt="Avatar" src="../../assets/img/avatar2.jpg">
+            <span>{{userName}}</span> 
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <!-- <li><a href="/html/index.html#">我的账户</a></li> -->
+            <li class="divider"></li>
+            <li><a (click)="logout()">退出</a></li>
+          </ul>
+        </li>
+      </ul>     
+    </div><!--/.nav-collapse animate-collapse -->
+  </div>
+</div>

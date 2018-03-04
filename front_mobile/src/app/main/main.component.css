@@ -1,0 +1,40 @@
+.page-header {
+	height: 4%;
+}
+.header-menu{
+    margin-top: -29px;
+    margin-left: 14px;
+}
+.header-menu-img {
+	font-size: 21px;
+	color: #CCCCCC;
+}
+.left-menu {
+	position: absolute;
+    z-index: 999999;
+    width: 50%;
+    height: 50%;
+    margin-top: 50px;
+    margin-left: 13px;
+    border:solid 1px;
+    border-color: #CCCCCC;
+    display: none;
+    background-color: #CC9960;
+}
+.left-menu-active {
+	display: block;
+}
+.left-menu-li {
+	border-bottom: solid 1px;
+	border-color: #CCCCCC;
+}
+
+.left-menu-li a {
+	color: #FFFFFF;
+}
+
+.header-title{
+	float: right;
+	margin-top: -22px;
+	margin-right: 211px;
+} 

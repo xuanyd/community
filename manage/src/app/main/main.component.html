@@ -1,0 +1,24 @@
+<c-header-menu></c-header-menu>
+<div id="cl-wrapper" class="fixed-menu">
+  <div class="cl-sidebar" data-position="right" data-step="1" data-intro="&lt;strong&gt;Fixed Sidebar&lt;/strong&gt; &lt;br/&gt; It adjust to your needs.">
+    <div class="cl-toggle"><i class="fa fa-bars"></i></div>
+    <c-left-menu></c-left-menu>  
+</div>
+<div class="container-fluid" id="pcont">
+  <div class="page-head">
+    <ol class="breadcrumb">
+      <li><a href="javascript:void(0);">主页</a></li>
+<!--       <li><a href="javascript:void(0);">设置</a></li>
+      <li class="active">表格</li> -->
+    </ol>
+  </div>
+  <div class="cl-mcont">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block-flat">
+          <router-outlet ></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>

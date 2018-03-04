@@ -1,0 +1,21 @@
+.title {
+	text-align: center; 
+	background-color: #996666;
+	height: 35px;
+}
+
+.sub-title {
+	background-color: #CCCCCC;
+	height: 20px;
+}
+
+.main {
+	height: 50%;
+	width: 100%;
+	background-color: #99CCCC;
+}
+
+.new-item {
+	border-bottom: solid 1px;
+	border-color: #CCCCCC;
+}

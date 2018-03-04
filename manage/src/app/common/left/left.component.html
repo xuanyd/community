@@ -1,0 +1,37 @@
+<div class="cl-navblock">
+  <div class="menu-space nano nscroller has-scrollbar" style="height: 467px;">
+    <div class="content" tabindex="0" style="right: -17px;">
+      <div class="side-user">
+        <div class="avatar">
+          <img src="../../assets/img/avatar1_50.jpg" alt="Avatar">
+        </div>
+        <div class="info">
+          <a href="/html/index.html#">{{userName}}</a>
+          <img src="../../assets/img/state_online.png" alt="Status"> 
+          <span>在线</span>
+        </div>
+      </div>
+      <ul *ngFor="let item of leftMenuJson" class="cl-vnavigation" style="display: none;">
+        <li class="parent">
+          <a href="javascript:void(0);" (click)="openLeft(item.id,item.url)">
+            <i class="fa {{item.cls}}"></i>
+            <span>{{item.name}}</span>
+          </a>
+          <ul *ngIf="item.childs" class="sub-menu" [ngClass]="{'display-block':leftMenus[item.id]}">
+            <li *ngFor="let sItem of item.childs" [ngClass]="{'active':leftMenus[sItem.id]}">
+              <a href="javascript:void(0);" (click)="openLeft(sItem.id,sItem.url)">{{sItem.name}}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  <div class="pane" style="display: block;">
+    <div class="slider" style="height: 386px; top: 0px;"></div>
+  </div>
+</div>
+<div class="text-right collapse-button" style="padding: 7px 9px;">
+  <input type="text" class="form-control search" placeholder="Search...">
+  <button id="sidebar-collapse" class="btn btn-default" style="">
+    <i style="color:#fff;" class="fa fa-angle-left"></i>
+  </button>
+</div>

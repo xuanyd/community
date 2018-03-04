@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="clk">
+    <output-path>$PROJECT_DIR$/../../../myeclipse/project/clk_web/web_exp</output-path>
+    <root id="archive" name="clk.war" />
+  </artifact>
+</component>

@@ -1,0 +1,57 @@
+<div id="cl-wrapper" class="login-container">
+  <div class="middle-login">
+    <div class="block-flat">
+      <!-- <div class="header">              
+        <h3 class="text-center">
+          <img class="logo-img" src="../../assets/img/logo.png" alt="logo"/>后台管理</h3>
+      </div> -->
+      <div>
+        <form [formGroup]="loginForm" class="form-horizontal" 
+          style="margin-bottom: 0px !important;" class="form-horizontal" >
+          <div class="content">
+            <h4 class="title">
+             
+              <div style="color: red;" [hidden]="loginValid">
+                用户名或密码输入有误，请重新输入
+              </div>
+            </h4>
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" placeholder="Username" class="form-control" 
+                      formControlName="userName">
+                  </div>
+                  <div style="color: red;" 
+                      [hidden]="!(loginForm.controls['userName'].errors && loginForm.controls['userName'].dirty)">
+                      用户名必填，5-15位！
+                    </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                    <input type="password" placeholder="Password" 
+                      class="form-control" formControlName="password">
+                  </div>
+                  <div style="color: red;"  
+                    [hidden]="!(loginForm.controls['password'].errors && loginForm.controls['password'].dirty)">
+                    密码必填，3-15位！
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="foot">
+            <div style="color: red;float: left;" [hidden]="connectionValid">
+              {{connectErrMsg}}
+            </div>
+            <button class="btn btn-primary" data-dismiss="modal" type="submit" (click)="login()">
+              登录
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div> 
+</div>

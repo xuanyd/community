@@ -1,0 +1,36 @@
+.subtitle {
+	margin-top: 20px;
+	height: 20px;
+}
+.subtitle-p {
+	margin-top: -11px;
+}
+.main-content{
+	margin-top: 82px;
+}
+
+.media-user{
+	float: right;
+	margin-top: -29px;
+	margin-right: -14px;
+}
+
+.media-msg-see {
+	float: right;
+	margin-right: 8px;
+	margin-bottom: -12px;
+}
+
+.media-msg-replay {
+	float: right;
+	margin-right: -91px;
+	margin-bottom: -12px;
+}
+
+.media-msg-img {
+	color: #CCCCCC;
+}
+.media-msg-p {
+	float: right;
+	font-size: 12px;
+}
