@@ -13,24 +13,24 @@
 	position: absolute;
     z-index: 999999;
     width: 50%;
-    height: 50%;
     margin-top: 50px;
     margin-left: 13px;
     border:solid 1px;
     border-color: #CCCCCC;
     display: none;
-    background-color: #CC9960;
+    background-color: #FFFFFF;
 }
 .left-menu-active {
 	display: block;
 }
+
 .left-menu-li {
 	border-bottom: solid 1px;
 	border-color: #CCCCCC;
 }
 
 .left-menu-li a {
-	color: #FFFFFF;
+	color: #000000;
 }
 
 .header-title{
@@ -38,3 +38,21 @@
 	margin-top: -22px;
 	margin-right: 211px;
 } 
+
+.fa-angle-right {
+	margin-left: 70px;
+}
+
+.row-header {
+	margin-top: 20px;
+	margin-right: 1px;
+}
+.header-tab {
+	text-align: center;
+    border: solid .5px;
+    border-color: #CCCCCC;
+}
+
+.menu-select {
+	background-color: #CCCCCC;
+}

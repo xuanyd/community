@@ -9,6 +9,7 @@ import { Router,ActivatedRoute } from '@angular/router';
 export class MainComponent implements OnInit{
 
   menuClick: boolean = false;
+  hotSelect: boolean = true;
 
   constructor(private router: Router){
 
@@ -22,15 +23,18 @@ export class MainComponent implements OnInit{
     this.menuClick = !this.menuClick;
   }
 
-  /*changePath(path) {
-    if(path === 'home'){
-      this.homeSelect = true;
-      this.mySelect = false;
+  changePath(path) {
+    this.menuClick = false;
+    if(path === 'hot'){
+      if(this.hotSelect == true)
+        return;
+      this.hotSelect = true;
       this.router.navigate(['/main/community/hot']);
-    } else if(path === 'my'){
-      this.homeSelect = false;
-      this.mySelect = true;
-      this.router.navigate(['/main/user/home']);
+    } else if(path === 'plate'){
+      if(this.hotSelect == false)
+        return;
+      this.hotSelect = false;
+      this.router.navigate(['/main/community/plate']);
     } 
-  }*/
+  }
 }
