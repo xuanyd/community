@@ -2,6 +2,7 @@ drop database if exists xqgj;
 create database xqgj;
 use xqgj;
 
+
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `uid` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
