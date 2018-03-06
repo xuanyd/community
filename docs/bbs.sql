@@ -1,7 +1,7 @@
 /*
  小区管家数据库
  数据库名为：xqgj(小区管家）
- 数据库表：user/section/topic/comment
+ 数据库表：user/section/topic/comment 
 */
 drop database if exists xqgj;
 create database xqgj;
