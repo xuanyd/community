@@ -27,10 +27,15 @@
 	
 }
 
-.hote-item {
+.hot-item {
 	border-bottom: solid .5px;
 	border-color:  #CCCCCC;
 	margin-top: 36px;
+}
+
+.hot-item div p{
+	margin-left: 55px;
+    margin-top: 3px;
 }
 
 .pre-scrollable {

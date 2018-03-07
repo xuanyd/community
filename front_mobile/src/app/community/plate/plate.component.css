@@ -6,6 +6,15 @@
 	margin-top: 10px;
 }
 
+.plate-item {
+	border-bottom: solid 1px;
+    height: 35px;
+    border-color:  #CCCCCC;
+}
+
+.plate-item div {
+	margin-top: 9px;
+}
 .plate-title {
 	border-top: solid 1px;
 	border-bottom: solid 1px;
