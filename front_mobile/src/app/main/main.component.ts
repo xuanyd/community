@@ -35,6 +35,8 @@ export class MainComponent implements OnInit{
         return;
       this.hotSelect = false;
       this.router.navigate(['/main/community/plate']);
-    } 
+    }  else if (path == 'userCenter') {
+      this.router.navigate(['/main/user/home']);
+    }
   }
 }
