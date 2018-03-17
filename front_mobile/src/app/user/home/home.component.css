@@ -1,21 +1,10 @@
-.header-msg-left {
-	margin-top: 14px;
-	margin-left: 9px;
+.user-info {
+    border-bottom: solid 1px;
+    border-color: #CCCCCC;
+    margin-left: 10px;
+    margin-right: 10px;
 }
-
-.header-msg-right {
-	margin-top: 14px;
-	margin-right: 9px;
-}
-
-.my-title-p {
-	margin-top: 3px;
-}
-
-.main-content {
-	margin-top: 46px;
-}
-
-.none-border-top {
-	border-top: none;
+.user-info div img{
+	height: 40px;
+    margin-left: 56px;
 }
