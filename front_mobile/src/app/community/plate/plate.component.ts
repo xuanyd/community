@@ -17,7 +17,9 @@ export class PlateComponent implements OnInit{
 
   }
 
-  toHot() {
-  	this.router.navigate(['/main/community/hot']);
+  changePath(path) {
+    if (path == 'userCenter') {
+      this.router.navigate(['/main/user/home']);
+    }
   }
 }
