@@ -31,7 +31,7 @@ https://cipchk.github.io/ngx-ueditor/#/dev
 https://segmentfault.com/a/1190000009157357
 
 ng build --prod
-ng build --prod --aot
+ng build --prod --aot --base-href manage
 
 angularjs2 NgModule
 https://segmentfault.com/a/1190000007187393

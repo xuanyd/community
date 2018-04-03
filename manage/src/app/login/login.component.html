@@ -47,7 +47,10 @@
               {{connectErrMsg}}
             </div>
             <button class="btn btn-primary" data-dismiss="modal" type="submit" (click)="login()">
-              登录
+              <div [hidden]="!isLogin">
+                <i class="fa fa-circle-o-notch fa-spin"></i>
+              </div>
+              <div [hidden]="isLogin">登录</div>
             </button>
           </div>
         </form>

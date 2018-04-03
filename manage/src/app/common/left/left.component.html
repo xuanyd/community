@@ -3,22 +3,21 @@
     <div class="content" tabindex="0" style="right: -17px;">
       <div class="side-user">
         <div class="avatar">
-          <img src="../../assets/img/avatar1_50.jpg" alt="Avatar">
+          <img src="assets/img/avatar1_50.jpg" alt="Avatar">
         </div>
         <div class="info">
           <a href="/html/index.html#">{{userName}}</a>
-          <img src="../../assets/img/state_online.png" alt="Status"> 
+          <img src="assets/img/state_online.png" alt="Status"> 
           <span>在线</span>
         </div>
       </div>
-      <ul *ngFor="let item of leftMenuJson" class="cl-vnavigation" style="display: none;">
-        <li class="parent">
+      <ul class="cl-vnavigation">
+        <li *ngFor="let item of leftMenuJson" [ngClass]="{'parent':item.childs}" >
           <a href="javascript:void(0);" (click)="openLeft(item.id,item.url)">
-            <i class="fa {{item.cls}}"></i>
-            <span>{{item.name}}</span>
+            <i class="fa {{item.cls}}"></i><span>{{item.name}}</span>
           </a>
           <ul *ngIf="item.childs" class="sub-menu" [ngClass]="{'display-block':leftMenus[item.id]}">
-            <li *ngFor="let sItem of item.childs" [ngClass]="{'active':leftMenus[sItem.id]}">
+            <li *ngFor="let sItem of item.childs">
               <a href="javascript:void(0);" (click)="openLeft(sItem.id,sItem.url)">{{sItem.name}}</a>
             </li>
           </ul>

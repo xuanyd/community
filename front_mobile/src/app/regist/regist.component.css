@@ -29,3 +29,7 @@ body {
 	height: 45px;
     margin-top: -14px;
 }
+
+select option {
+	width: 100%;
+}

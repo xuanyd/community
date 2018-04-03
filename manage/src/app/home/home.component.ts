@@ -10,9 +10,6 @@ import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms'
 
 export class HomeComponent implements OnInit {
 
-	/**
-  * 初始化
-  */
   ngOnInit() {
 
   }

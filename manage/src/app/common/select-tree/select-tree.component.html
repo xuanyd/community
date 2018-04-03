@@ -1,7 +1,0 @@
-<select name="{{selectTree.treeName}}" class="form-control">
-	<optgroup *ngFor = "let item of selectTree.treeData" label="{{item.name}}" style="">
-		<option *ngFor="let sItem of item.child" value="{{sItem.id}}">
-			{{sItem.name}}
-		</option>
-	</optgroup>
-</select>

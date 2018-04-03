@@ -11,8 +11,7 @@ const mainRoutes: Routes = [
     component: MainComponent,
     children: [
       { path: 'home', loadChildren: 'app/home/home.module#HomeModule' },
-      { path: 'sitecfg', loadChildren: 'app/sitecfg/sitecfg.module#SiteCfgModule' },
-      { path: 'test', loadChildren: 'app/test/test.module#TestModule' }
+      { path: 'user', loadChildren: 'app/user/user.module#UserModule' }
     ]
   }
 ]

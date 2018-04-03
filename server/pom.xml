@@ -260,7 +260,7 @@
         <version>2.1</version>
         <configuration>
           <!-- 注意tomcat7此处的url -->
-          <url>http://localhost:8080/manager/text</url>
+          <url>http://47.94.81.15:8080/manager/text</url>
           <username>tomcat</username>
           <password>tomcat</password>
           <update>true</update>
